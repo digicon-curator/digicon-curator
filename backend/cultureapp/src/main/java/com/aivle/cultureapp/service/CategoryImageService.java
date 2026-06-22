@@ -17,10 +17,13 @@ public class CategoryImageService {
 
     public String resolveColor(String category) {
         return switch (category) {
-            case "문화재" -> "#3b82f6";
-            case "축제" -> "#a855f7";
+            case "문화재"  -> "#3b82f6";
+            case "축제"   -> "#a855f7";
             case "전통시장" -> "#f97316";
             case "특화거리" -> "#ec4899";
+            case "향토문화" -> "#10b981";
+            case "행사"   -> "#f59e0b";
+            case "공연"   -> "#06b6d4";
             default -> "#64748b";
         };
     }
