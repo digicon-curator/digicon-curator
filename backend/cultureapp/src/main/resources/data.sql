@@ -28,4 +28,10 @@ INSERT INTO category_image (category, image_url) VALUES
 ('특화거리', 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800'),
 ('특화거리', 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800'),
 ('기타', 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800'),
-('기타', 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800');
+('기타', 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800'),
+('향토문화', 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800'),
+('향토문화', 'https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=800'),
+('행사', 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800'),
+('행사', 'https://images.unsplash.com/photo-1496337589254-7e19d01cec44?w=800'),
+('공연', 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800'),
+('공연', 'https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800');

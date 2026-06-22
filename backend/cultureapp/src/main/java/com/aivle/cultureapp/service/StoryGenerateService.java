@@ -21,6 +21,7 @@ public class StoryGenerateService {
     private final RestTemplate restTemplate;
     private final StoryRepository storyRepository;
     private final CategoryImageService categoryImageService;
+    private final KakaoAddressService kakaoAddressService;
 
     @Value("${ai.service.base-url}")
     private String aiServiceBaseUrl;
@@ -42,9 +43,9 @@ public class StoryGenerateService {
 
         AiStoryResponse aiStory = response.getBody();
 
-        // TODO: 카카오 address search API로 지역명→좌표 변환 구현 필요 (회의 후 결정)
-        double lat = 0.0;
-        double lng = 0.0;
+        double[] coords = kakaoAddressService.getCoordinates(aiStory.region());
+        double lat = coords[0];
+        double lng = coords[1];
 
         String color = categoryImageService.resolveColor(aiStory.category());
         String imageUrl = categoryImageService.resolveImageUrl(aiStory.category());
