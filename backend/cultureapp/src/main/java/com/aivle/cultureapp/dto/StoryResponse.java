@@ -1,25 +1,19 @@
 package com.aivle.cultureapp.dto;
 
-import lombok.Builder;
-import lombok.Getter;
+import java.util.List;
 
-@Getter
-@Builder
-public class StoryResponse {
-
-    private Long id;
-
-    private String title;
-
-    private String desc;
-
-    private String category;
-
-    private Double lat;
-
-    private Double lng;
-
-    private String color;
-
-    private String imageUrl;
+public record StoryResponse(
+        Long id,
+        String title,
+        String description,
+        String category,
+        String color,
+        String imageUrl,
+        double lat,
+        double lng,
+        String region,
+        List<TimelineItem> timeline
+) {
+    public record TimelineItem(String year, String title, String text) {
+    }
 }
