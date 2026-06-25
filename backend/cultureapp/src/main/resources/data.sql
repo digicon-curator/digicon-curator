@@ -35,3 +35,11 @@ INSERT INTO category_image (category, image_url) VALUES
 ('행사', 'https://images.unsplash.com/photo-1496337589254-7e19d01cec44?w=800'),
 ('공연', 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800'),
 ('공연', 'https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800');
+
+INSERT INTO story_statistic
+(story_id, search_count, visit_count, review_count, satisfaction, trend_score, summary)
+VALUES
+(1, 520, 310, 145, 4.8, 92.5, '도심 속 자연 힐링 명소로 방문 증가'),
+(2, 680, 450, 220, 4.7, 96.0, '근대문화 관광 수요 증가로 높은 관심'),
+(3, 430, 270, 110, 4.6, 84.0, '전통문화 체험 수요가 꾸준히 유지'),
+(4, 590, 390, 190, 4.9, 94.0, 'SNS 리뷰 증가로 관광객 유입 확대');
