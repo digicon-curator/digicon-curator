@@ -1,3 +1,5 @@
+SET NAMES utf8mb4;
+
 INSERT INTO story (title, description, category, color, image_url, lat, lng, region) VALUES
 ('한밭수목원의 사계', '대전 도심 속 자연을 담은 수목원, 계절마다 다른 얼굴을 보여줍니다.', '자연', '#22c55e', 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800', 36.3504, 127.3845, '대전광역시'),
 ('군산 근대문화의 거리', '일제강점기 건축물이 그대로 남아있는 시간여행 같은 골목길.', '문화재', '#3b82f6', 'https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?w=800', 35.9676, 126.7369, '군산시'),
