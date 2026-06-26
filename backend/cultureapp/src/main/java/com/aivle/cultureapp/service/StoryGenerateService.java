@@ -8,6 +8,10 @@ import com.aivle.cultureapp.entity.TimelineEntry;
 import com.aivle.cultureapp.repository.StoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -37,8 +41,16 @@ public class StoryGenerateService {
                 "interest", request.interest()
         );
 
-        ResponseEntity<AiStoryResponse> response = restTemplate.postForEntity(
-                requestUrl, requestBody, AiStoryResponse.class
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<Map<String, String>> entity = new HttpEntity<>(requestBody, headers);
+
+        ResponseEntity<AiStoryResponse> response = restTemplate.exchange(
+                requestUrl,
+                HttpMethod.POST,
+                entity,
+                AiStoryResponse.class
         );
 
         AiStoryResponse aiStory = response.getBody();
@@ -63,10 +75,7 @@ public class StoryGenerateService {
 
         if (aiStory.timeline() != null) {
             for (StoryResponse.TimelineItem item : aiStory.timeline()) {
-                TimelineEntry entry = new TimelineEntry(
-                        item.year(), item.title(), item.text(), story
-                );
-                story.addTimeline(entry);
+                story.addTimeline(new TimelineEntry(item.year(), item.title(), item.text(), story));
             }
         }
 
